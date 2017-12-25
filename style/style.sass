@@ -1,2 +1,119 @@
 
-$dark-gray: #292929
+$dark-gray:   #292929
+$light-gray:  #565656
+$white:       #f5f5f5
+$power-green: #285D1B // on/off green
+$green:       #2E9800
+$red:         #D33232
+$strict-red:  #f00
+$yellow:      #E9C828
+$blue:        #4843E3
+
+h1
+  display: block
+  font-family: "Wide Latin", sans-serif
+  color: $white
+  margin: 0 auto
+
+html
+  height: 100%
+
+body
+  height: 98%
+  background-color: $dark-gray
+
+.container
+  display: flex
+  justify-content: center
+  align-items: center
+  height: inherit
+
+#simon-disc
+  display: flex
+  flex-flow: row wrap
+  justify-content: space-around
+  align-items: center
+  width: 40rem
+  height: 40rem
+  border: 8px solid $light-gray
+  background-color: $light-gray
+  border-radius: 40rem
+  overflow: hidden
+
+.field
+  width: 49.9%
+  height: 49.9%
+  cursor: pointer
+
+#green-field
+  background-color: $green
+  position: relative
+  bottom: 0.35rem
+  right: 0.35rem
+
+#red-field
+  background-color: $red
+  position: relative
+  bottom: 0.35rem
+  left: 0.35rem
+
+#yellow-field
+  background-color: $yellow
+  position: relative
+  top: 0.35rem
+  right: 0.35rem
+
+#blue-field
+  background-color: $blue
+  position: relative
+  top: 0.35rem
+  left: 0.35rem
+
+#game-board
+  background-color: $light-gray
+  width: 22rem
+  height: 22rem
+  border-radius: 20rem
+  z-index: 1
+  position: relative
+  bottom: 31rem
+  h1
+    text-align: center
+    position: relative
+    top: 22%
+
+#streak_count
+  width: 4rem
+  height: 2rem
+  margin: 0 auto
+  text-align: center
+  position: relative
+  background-color: $dark-gray
+  border: 2px solid $white
+  border-radius: 2rem
+  top: 30%
+  h2
+    font-family: Orbitron, sans-serif
+    font-weight: bold
+    position: relative
+    bottom: 1.2rem
+    color: $white
+
+.button
+  width: 2rem
+  height: 2rem
+  border-radius: 2rem
+  border: 2px solid $white
+  background-color: transparent
+  position: relative
+  left: 25%
+  margin: 0 auto
+  top: 40%
+  cursor: pointer
+
+#power
+  background-color: $power-green
+
+#strict_mode
+  left: 12.5rem
+  background-color: $strict-red
