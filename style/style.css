@@ -21,7 +21,7 @@ body {
   align-items: center;
   height: inherit; }
 
-#simon-disc {
+#simon_disc {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
@@ -38,31 +38,31 @@ body {
   height: 49.9%;
   cursor: pointer; }
 
-#green-field {
+#green_field {
   background-color: #2E9800;
   position: relative;
   bottom: 0.35rem;
   right: 0.35rem; }
 
-#red-field {
+#red_field {
   background-color: #D33232;
   position: relative;
   bottom: 0.35rem;
   left: 0.35rem; }
 
-#yellow-field {
+#yellow_field {
   background-color: #E9C828;
   position: relative;
   top: 0.35rem;
   right: 0.35rem; }
 
-#blue-field {
+#blue_field {
   background-color: #4843E3;
   position: relative;
   top: 0.35rem;
   left: 0.35rem; }
 
-#game-board {
+#game_board {
   background-color: #565656;
   width: 18rem;
   height: 18rem;
@@ -70,7 +70,7 @@ body {
   z-index: 1;
   position: relative;
   bottom: 23.8rem; }
-  #game-board h1 {
+  #game_board h1 {
     text-align: center;
     position: relative;
     top: 22%; }
@@ -103,8 +103,8 @@ body {
   cursor: pointer;
   outline: none; }
 
-#power {
-  background-color: #285D1B; }
+#power, #strict_mode {
+  background-color: #292929; }
 
 #power_text {
   position: relative;
@@ -112,8 +112,7 @@ body {
   left: 20%; }
 
 #strict_mode {
-  left: 10rem;
-  background-color: #f00; }
+  left: 10rem; }
 
 #strict_text {
   position: relative;
