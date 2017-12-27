@@ -1,5 +1,4 @@
 h1 {
-  display: block;
   font-family: "Wide Latin", sans-serif;
   color: #f5f5f5;
   margin: 0 auto; }
@@ -15,6 +14,10 @@ body {
   height: 98%;
   background-color: #292929; }
 
+#green_field, #red_field, #yellow_field, #blue_field,
+#game_board, #streak_display, #power_text, #strict_text, .button {
+  position: relative; }
+
 .container {
   display: flex;
   justify-content: center;
@@ -22,12 +25,12 @@ body {
   height: inherit; }
 
 #simon_disc {
+  width: 30rem;
+  height: 30rem;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
   align-items: center;
-  width: 30rem;
-  height: 30rem;
   border: 8px solid #565656;
   background-color: #565656;
   border-radius: 40rem;
@@ -35,57 +38,51 @@ body {
 
 .field {
   width: 49.9%;
-  height: 49.9%;
-  cursor: pointer; }
+  height: 49.9%; }
 
 #green_field {
   background-color: #2E9800;
-  position: relative;
   bottom: 0.35rem;
   right: 0.35rem; }
 
 #red_field {
   background-color: #D33232;
-  position: relative;
   bottom: 0.35rem;
   left: 0.35rem; }
 
 #yellow_field {
   background-color: #E9C828;
-  position: relative;
   top: 0.35rem;
   right: 0.35rem; }
 
 #blue_field {
   background-color: #4843E3;
-  position: relative;
   top: 0.35rem;
   left: 0.35rem; }
 
 #game_board {
-  background-color: #565656;
   width: 18rem;
   height: 18rem;
+  background-color: #565656;
   border-radius: 20rem;
   z-index: 1;
-  position: relative;
   bottom: 23.8rem; }
   #game_board h1 {
+    text-decoration: underline;
     text-align: center;
     position: relative;
     top: 22%; }
 
-#streak_count {
+#streak_display {
   width: 4rem;
   height: 2rem;
   margin: 0 auto;
   text-align: center;
-  position: relative;
   background-color: #292929;
   border: 2px solid #f5f5f5;
   border-radius: 2rem;
   top: 30%; }
-  #streak_count h2 {
+  #streak_display h2 {
     font-weight: bold;
     position: relative;
     bottom: 1.2rem; }
@@ -96,18 +93,18 @@ body {
   border-radius: 2rem;
   border: 2px solid #f5f5f5;
   background-color: transparent;
-  position: relative;
   left: 25%;
   margin: 0 auto;
   top: 7.5rem;
-  cursor: pointer;
   outline: none; }
+
+.button, .field {
+  cursor: pointer; }
 
 #power, #strict_mode {
   background-color: #292929; }
 
 #power_text {
-  position: relative;
   top: 37%;
   left: 20%; }
 
@@ -115,7 +112,6 @@ body {
   left: 10rem; }
 
 #strict_text {
-  position: relative;
   top: 22%;
   left: 60%; }
 
