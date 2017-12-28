@@ -76,12 +76,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function turnOn() {
         gameOn = true;
-        console.log("the game is on!");
         powerButton.style.background = powerOnGreen;
         streakCount.textContent = "00";
         startUpEffect();
         setTimeout(startUpEffect, 400);
-        setTimeout(simonGame(false), 1200);
+        setTimeout(function() {
+            simonGame(false);
+        }, 1000);
     }
 
 
@@ -91,7 +92,6 @@ document.addEventListener("DOMContentLoaded", function () {
             let randomFieldColor = fieldColors[Math.floor(Math.random() * 4)]; // choose next color at random
             simonSequence.push(randomFieldColor);
         }
-        console.log(simonSequence);
         iterator = 0;
         let intervalSequence = setInterval(function () {
             // play entire sequence, with added color
@@ -100,7 +100,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 clearInterval(intervalSequence);
                 playerIterator = 0;
                 playerAllowed = true;
-                console.log("now its your turn, player");
             }
         }, 1000);
     }
@@ -113,9 +112,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     streakCount.textContent = ":)";
                     playerAllowed = false;
                     winAnimation();
+                    setTimeout(winAnimation, 800);
 
                 } else {
-                    console.log("advancing to next level...");
                     streak++;
                     playerAllowed = false;
                     playerSequence = [];
@@ -183,14 +182,9 @@ document.addEventListener("DOMContentLoaded", function () {
         streakCount.textContent = (streak < 10) ? "0" + streak : streak;
     }
 
-    function winAnimation() {
-        //epic winning animation
-    }
-
     function turnOff() {
-        console.log("the game is off!");
         resetSequences();
-        streak = 0;
+        streak = 1;
         iterator = 0;
         playerIterator = 0;
         powerButton.style.background = "#292929";
@@ -209,22 +203,46 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // fancy boot-effect
     function startUpEffect() {
-        document.getElementById("green_field").style.background = greenSelected;
+        greenField.style.background = greenSelected;
         setTimeout(function () {
-            document.getElementById("green_field").style.background = green;
-            document.getElementById("red_field").style.background = redSelected;
+            greenField.style.background = green;
+            redField.style.background = redSelected;
             setTimeout(function () {
-                document.getElementById("red_field").style.background = red;
-                document.getElementById("blue_field").style.background = blueSelected;
+                redField.style.background = red;
+                blueField.style.background = blueSelected;
                 setTimeout(function () {
-                    document.getElementById("blue_field").style.background = blue;
-                    document.getElementById("yellow_field").style.background = yellowSelected;
+                    blueField.style.background = blue;
+                    yellowField.style.background = yellowSelected;
                     setTimeout(function () {
-                        document.getElementById("yellow_field").style.background = yellow;
+                        yellowField.style.background = yellow;
                     }, 100)
                 }, 100)
             }, 100)
         }, 100);
     }
-
+    //fancy winning animation
+    function winAnimation() {
+        greenField.style.background = greenSelected;
+        setTimeout(function () {
+            redField.style.background = redSelected;
+            setTimeout(function () {
+                blueField.style.background = blueSelected;
+                setTimeout(function () {
+                    yellowField.style.background = yellowSelected;
+                    setTimeout(function () {
+                        greenField.style.background = green;
+                        setTimeout(function () {
+                            redField.style.background = red;
+                            setTimeout(function () {
+                                blueField.style.background = blue;
+                                setTimeout(function () {
+                                    yellowField.style.background = yellow;
+                                }, 100)
+                            }, 100)
+                        }, 100)
+                    }, 100)
+                }, 100)
+            }, 100)
+        }, 100)
+    }
 });
