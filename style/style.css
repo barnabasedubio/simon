@@ -106,13 +106,15 @@ body {
 
 #power_text {
   top: 37%;
-  left: 20%; }
+  left: 20%;
+  width: 5rem; }
 
 #strict_mode {
   left: 10rem; }
 
 #strict_text {
   top: 22%;
-  left: 60%; }
+  left: 60%;
+  width: 4rem; }
 
 /*# sourceMappingURL=style.css.map */
